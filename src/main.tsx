@@ -4,9 +4,9 @@ import App from './App'
 import './index.css'
 import {Provider} from "react-redux";
 import store from './store';
-import Custom404 from "./pages/404";
-import Homepage from "./pages/Homepage";
-import Details from "./pages/Details";
+import Custom404 from "./modules/404";
+import Homepage from "./modules/Homepage/Homepage";
+import Details from "./modules/Details";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 // Browser router configuration
