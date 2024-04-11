@@ -18,7 +18,6 @@ function Dropdown({ onChange, placeholder = '', value = '', options = [] }) {
 		setDropdownActive(false);
 	}
 
-	console.log(isDropdownActive);
 	useEffect(() => {
 		document.addEventListener('mousedown', handleOutsideClick);
 		return () => {

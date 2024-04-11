@@ -6,7 +6,8 @@ import { createSlice, configureStore } from "@reduxjs/toolkit";
  * */
 
 const initialState = {
-	pokemons: []
+	pokemons: [],
+	filteredPokemons: []
 };
 
 const pokemonSlice = createSlice({
@@ -14,8 +15,12 @@ const pokemonSlice = createSlice({
 	initialState,
 	reducers: {
 		setPokemons(state, action) {
-			console.log(action.payload)
-			state.pokemons = action.payload;
+			const pokemons = action.payload;
+			state.pokemons = pokemons;
+			state.filteredPokemons = pokemons;
+		},
+		setFilteredPokemons(state, action) {
+			state.filteredPokemons = action.payload;
 		}
 	}
 })

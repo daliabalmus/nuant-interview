@@ -5,7 +5,7 @@ import logo from '../../assets/logo.png';
 import Filters from "./components/Filters";
 
 function Homepage() {
-	const pokemons = useSelector(state => state.pokemons);
+	const filteredPokemons = useSelector(state => state.filteredPokemons);
 
 	return (
 		<>
@@ -18,10 +18,10 @@ function Homepage() {
 
 				<hr className="my-12 h-px border-t-0 bg-neutral-100 dark:bg-white/10"/>
 
-				{ pokemons?.length === 0 && <h3>No Pokemons in the list</h3> }
+				{ filteredPokemons?.length === 0 && <h3>No Pokemons in the list</h3> }
 
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-					{ pokemons && pokemons.map((pokemon, i) => (
+					{ filteredPokemons && filteredPokemons.map((pokemon, i) => (
 						<PokemonListItem key={i} pokemon={pokemon} />
 					))}
 				</div>
