@@ -1,15 +1,9 @@
-import { useSelector } from "react-redux";
-
-function Homepage() {
-	const pokemons = useSelector(state => state.pokemons);
-
+function Details() {
 	return (
 		<>
-			{ pokemons && pokemons.map((pokemon, i) => (
-				<div key={i}>{pokemon.name}</div>
-			))}
+			<h1>This is the details page</h1>
 		</>
 	)
 }
 
-export default Homepage
+export default Details

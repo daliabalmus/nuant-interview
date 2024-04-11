@@ -14,6 +14,7 @@ const pokemonSlice = createSlice({
 	initialState,
 	reducers: {
 		setPokemons(state, action) {
+			console.log(action.payload)
 			state.pokemons = action.payload;
 		}
 	}
