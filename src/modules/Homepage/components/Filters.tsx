@@ -45,7 +45,7 @@ function Filters() {
 			// if filter.type does not match any pokemon type the filter method should return false
 			const matchingTypes = types.find(itm => itm.type.name === filters.type);
 			if (!matchingTypes) return false;
-			
+
 			return true;
 		}
 
