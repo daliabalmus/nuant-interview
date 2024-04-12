@@ -1,10 +1,11 @@
 import './App.css'
+import { Outlet } from "react-router-dom";
 
 function App() {
-  return (
-    <>
-      <h1>This is the homepage</h1>
-    </>
+	return (
+		<>
+			<Outlet />
+		</>
   )
 }
 

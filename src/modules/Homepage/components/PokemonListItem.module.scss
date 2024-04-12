@@ -1,0 +1,42 @@
+.pokemon {
+	border: 1px solid rgba(255,255,255, 0.1);
+	border-radius: 8px;
+	padding: 24px;
+	cursor: pointer;
+	transition: all ease-in-out .3s;
+	&:hover {
+		border: 1px solid #FECC01;
+		.name {
+			color: #FECC01;
+		}
+	}
+	.pokemonImage {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		img {
+			height: 120px;
+		}
+	}
+	.name {
+		font-size: 18px;
+		text-transform: capitalize;
+		font-weight: 600;
+		padding-bottom: 16px;
+		margin-bottom: 16px;
+		border-bottom: 1px solid rgba(255,255,255, 0.05);
+		transition: all ease-in-out .3s;
+	}
+	.details {
+		margin-bottom: 8px;
+	}
+	.detailsTitle {
+		font-weight: 500;
+		font-size: 14px;
+	}
+	.description {
+		font-size: 14px;
+		color: rgba(255,255,255, 0.5);
+	}
+}
