@@ -2,12 +2,17 @@ import { createSlice, configureStore } from "@reduxjs/toolkit";
 
 /**
  * Redux store configuration and initial state
- * pokemons - typeof array - stores the pokemons list
+ * pokemons - typeof array - stores the pokemons list used as a refference
+ * filteredPokemons - typeof array - stores the pokemons list filtered by type and name
+ * pokemon - typeof object - stores single pokemon object
+ * loading - typeof boolean - stores the loading state before page loads
  * */
 
 const initialState = {
 	pokemons: [],
-	filteredPokemons: []
+	filteredPokemons: [],
+	pokemon: undefined,
+	loading: false
 };
 
 const pokemonSlice = createSlice({
@@ -21,6 +26,12 @@ const pokemonSlice = createSlice({
 		},
 		setFilteredPokemons(state, action) {
 			state.filteredPokemons = action.payload;
+		},
+		setPokemon(state, action) {
+			state.pokemon = action.payload;
+		},
+		setLoading(state, action) {
+			state.loading = action.payload;
 		}
 	}
 })

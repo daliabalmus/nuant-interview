@@ -25,3 +25,15 @@ export const fetchPokemonByName = async (name) => {
 		throw new Error('Something went wrong. Please try again');
 	}
 }
+
+/**
+ * Fetch PokemonClient to get Pokémon by id
+ * */
+export const fetchPokemonById = async (id) => {
+	try {
+		const response = await api.getPokemonById(id);
+		return response;
+	} catch (e) {
+		throw new Error('Something went wrong. Please try again');
+	}
+}

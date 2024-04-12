@@ -6,7 +6,7 @@ import {Provider} from "react-redux";
 import store from './store';
 import Custom404 from "./modules/404";
 import Homepage from "./modules/Homepage/Homepage";
-import Details from "./modules/Details";
+import Details from "./modules/Details/Details";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
 
 // Browser router configuration
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
 		children: [
 			{ index: true, element: <Homepage /> },
 			{
-				path: "/:name",
+				path: "/:id",
 				element: <Details />,
 				errorElement: <Custom404 />
 			},

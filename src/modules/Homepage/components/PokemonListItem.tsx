@@ -1,19 +1,22 @@
-
 import styles from './PokemonListItem.module.scss';
 import { formatName } from "../../../lib/utils";
 import ballOpenImg from '../../../assets/ball-open.png';
 import {useState} from "react";
+import { useNavigate } from "react-router-dom";
 
 function PokemonListItem({ pokemon }) {
+	const history = useNavigate();
 	if (!pokemon) return <></>;
 
 	const [showOpenBall, setShowOpenBall] = useState(false);
 
-	const handleHoverPokemon = (mouseEntered) => {
-		setShowOpenBall(mouseEntered);
-	}
+	const handleHoverPokemon = (mouseEntered) => setShowOpenBall(mouseEntered);
 
-	// Format ability names into a readable form
+	const goToDetails = () => {
+		history(`/${pokemon.id}`)
+	};
+
+	// Format ability names and types into a readable form
 	const abilities = pokemon.abilities.map(a => formatName(a.ability.name));
 	const types = pokemon.types.map(a => formatName(a.type.name));
 
@@ -23,6 +26,7 @@ function PokemonListItem({ pokemon }) {
 			className={styles.pokemon}
 			onMouseEnter={() => handleHoverPokemon(true)}
 			onMouseLeave={() => handleHoverPokemon(false)}
+			onClick={goToDetails}
 		>
 			<div className="grid grid-cols-3 grid-flow-col gap-4">
 				<div className={styles.pokemonImage}>
@@ -33,17 +37,17 @@ function PokemonListItem({ pokemon }) {
 					<h2 className={styles.name}>{ pokemon.name }</h2>
 					<p className={styles.details}>
 						<span className={styles.detailsTitle}>Abilities: </span>
-						<span className={styles.ability}>{ abilities.join(', ') }</span>
+						<span className={styles.description}>{ abilities.join(', ') }</span>
 					</p>
 
 					<p className={styles.details}>
 						<span className={styles.detailsTitle}>Types: </span>
-						<span className={styles.ability}>{ types.join(', ') }</span>
+						<span className={styles.description}>{ types.join(', ') }</span>
 					</p>
 
 					<p className={styles.details}>
 						<span className={styles.detailsTitle}>Base experience: </span>
-						<span className={styles.ability}>{ pokemon.base_experience }</span>
+						<span className={styles.description}>{ pokemon.base_experience }</span>
 					</p>
 				</div>
 			</div>
