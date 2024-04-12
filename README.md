@@ -1,3 +1,22 @@
+
+# INSTRUCTIONS:
+- `npm install` for installing dependencies
+- `npm run dev` for starting the project
+
+### What part of building the project was the most difficult? Why?
+For me the most difficult part was setting up the project. The other functionalities were pretty easy to implement.
+Not that it's a very difficult part, but it seems to me that it's the most complex job and that requires the most attention (at least for this pokemon dummy project). It is important how you set up your project and what kind of dependencies are you use, how they work together and how you structure the files and the routes.
+### How long did it take to have this test completed ? Which part of the test took you longer? Could you specify roughly the amount of time it took you to do the following:
+It took me a few hours but I had to take breaks between the lines
+
+Set up environment: 1h30min - I have downloaded the files in the provided github repository, cleaned up the project, installes new dependencied such as redux, scss, built main router structure
+
+Homepage with card structure: 30min
+
+Search feature + filter by type feature + Result display: 1h - I have created common separated reusable components for input and dropdown menu with options
+
+Details Page: 30min
+
 # Nuant FE Test
 
 This project uses vite react-ts template which provides a minimal setup to get React working in Vite with ESLint rules.
